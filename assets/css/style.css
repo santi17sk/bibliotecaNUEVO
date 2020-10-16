@@ -1,0 +1,208 @@
+/*---GLOBALES---*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*Porcentaje para trabajar con la medida rem 1rem = 10px*/
+}
+
+body {  
+font-family: 'Hind Madurai', sans-serif;
+  font-size: 1.6rem; /*Definimos el tamaño de 16 px*/
+  background: #F0EFF4;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+    font-size: 5rem;
+  }
+  
+  h2 {
+    font-size: 3.8rem;
+  }
+  
+  h3 {
+    font-size: 3.4rem;
+  }
+  
+  h4 {
+    font-size: 3rem;
+  }
+/*-----UTILIDADES-----*/
+.contenedor {
+    /* max-width: 120rem; Le damos un ancho al máximo contenedor */
+    width: 90%; /*Le decimos que solo ocupe un 95% del espacio disponible*/
+    margin: 0 auto; /*Centramos el contenido*/
+    padding: 1rem; /*Damos un padding*/
+  }
+  
+  .contenedor.inicio{
+    /* max-width: 120rem; Le damos un ancho al máximo contenedor */
+    width: 90%; /*Le decimos que solo ocupe un 95% del espacio disponible*/
+    margin: 0 auto; /*Centramos el contenido*/
+    padding: 1rem; /*Damos un padding*/
+    min-height: 100vh;
+    background: #FFFAFA;
+  }
+  
+  .contenedor a {
+    text-align: center; /*Centramos el texto*/
+  }
+  .centrar__texto {
+    text-align: center; /*Centramos el texto*/
+  } 
+  .no__margin{
+    margin:0;
+  }
+.titulo {
+    font-family: 'Bitter', serif;
+    }
+    
+    .style__site {
+      background-color: #3D2645; /*Le damos un color de fondo*/
+    }
+    
+    .contenedor h1 {
+      font-weight: 400;
+      margin: 3rem 0 0 0;
+    }
+    
+    .contenedor h1 span {
+      font-weight: 700;
+    }
+    
+    .barra a,
+    .links__secundarios a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    
+    /*Dispositivos Móviles de 768PX*/
+    @media (min-width: 768px) {
+      .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    
+    /*Dispositivos Móviles de 768PX*/
+    @media (min-width: 768px) {
+      .items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    
+    .inputCampo {
+      padding: 0.8rem;
+      border-radius: 2.5rem;
+      border: none;
+    }
+    
+    .items .buscador,
+    .items a {
+      margin-bottom: 0.5rem;
+    }
+    
+    .items a:hover,
+    .links__secundarios a:hover {
+      color: #E49AB0;
+    }
+    
+    /*Dispositivos Móviles de 768PX*/
+    @media (min-width: 768px) {
+      .items .buscador,
+      .items a {
+        margin-right: 2rem;
+        margin-bottom: 0rem;
+      }
+    
+      .items a:last-of-type {
+        margin-right: 0rem;
+      }
+    }
+    
+    /*Dispositivos Móviles de 768PX*/
+    @media (min-width: 768px) {
+      .links__secundarios {
+        display: flex;
+        justify-content: flex-end;
+        margin: -1rem 0 2rem 0;
+      }
+    }
+    
+    .links__secundarios a {
+      margin-bottom: 0.5rem;
+    }
+    
+    .links__secundarios a:last-of-type {
+      margin-bottom: 0rem;
+    }
+    
+    /*Dispositivos Móviles de 768PX*/
+    @media (min-width: 768px) {
+      .links__secundarios a {
+        margin-right: 2rem;
+        margin-bottom: 0rem;
+      }
+    
+      .links__secundarios a:last-of-type {
+        margin-right: 0rem;
+      }
+    }
+
+
+    /*------FOOTER-----*/
+.style__footer {
+    background-color: #3D2645;
+  }
+  
+  .style__footer h2 {
+    font-weight: 400;
+  }
+  
+  .style__footer h2 span {
+    font-weight: 700;
+  }
+  
+  .barra__footer a,
+  .barra__footer p {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .barra__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .enlaces a {
+    display: block;
+  }
+  
+  .bloques__enlaces {
+    display: flex;
+  }
+  
+  .bloques {
+    margin-right: 2rem;
+  }
+  
+  .copy {
+    color: white;
+    font-size: 2rem;
+    background-color: #DA4167;
+    padding: 1rem;
+}
+  
