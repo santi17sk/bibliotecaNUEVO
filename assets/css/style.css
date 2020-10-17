@@ -111,9 +111,18 @@ h4 {
   transition: all 300ms;
 }
 
+.btn__danger {
+  background: #DC3545;
+}
+
+.btn__ok {
+  background: #17A2B8;
+}
+
 .btn__ingresar {
   background: #3D2645;
 }
+
 
 .btn__ingresar:hover {
   background-color: #9819c2;
@@ -506,10 +515,39 @@ h4 {
 }
 
 /*Dispositivos Móviles de 768PX*/
+
 @media (min-width: 425px) {
   .sidebar {
     position: absolute;
     margin: 2rem 2.5rem;
     font-size: 3rem;
   }
+}
+
+.tabla {
+  margin: 0 auto;
+  border: 1px solid #7e7b7b;
+  border-collapse: collapse;
+}
+
+.tabla th {
+  padding: 1.5rem 6rem;
+  border: 1px solid #7e7b7b;
+  background-color: #DA4167;
+  color: white;
+
+}
+
+.tabla td{
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #7e7b7b;
+}
+
+.acciones {
+  margin-right: 1rem;
+}
+
+.acciones button:last-of-type{
+  margin-right: 0;
 }
