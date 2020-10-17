@@ -74,7 +74,7 @@ h4 {
 .campo__input {
   padding: 1rem;
   border-radius: 2rem;
-  border: 1px solid #575252;
+  border: 1px solid #8a8989;
 }
 
 .click {
@@ -192,7 +192,7 @@ h4 {
 .inputCampo__radius1 {
   padding: 0.8rem;
   border-radius: 1rem;
-  border: none;
+  border:1px solid rgb(61, 60, 60);
 }
 
 .items .buscador, .items a {
@@ -425,8 +425,9 @@ h4 {
 }
 
 .format {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
+
 
 .detalle__libros {
   margin: 5rem auto;
@@ -574,4 +575,9 @@ list-style: none;
 
 .acciones button:last-of-type{
   margin-right: 0;
+}
+
+.texarea{
+  width: 95%;
+  height: 8rem;
 }
