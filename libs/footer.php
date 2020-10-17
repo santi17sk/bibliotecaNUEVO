@@ -36,9 +36,36 @@
             </div>
         </footer>
         </body>
-        <div data-pushbar-id="bar__menu" data-pushbar-direction="left">
+        <div data-pushbar-id="bar__menu" data-pushbar-direction="left" class="menu__bar">
             <div data-pushbar-close class="btn__close"><i class="far fa-times-circle" style="font-size: 30px; float: right;margin: 10px;"></i></div>
-            <h1>Hola mundo</h1>
+            <h2 style="margin: 1rem;">Menu</h2>
+            <ul>
+                <li class="sub__menu">
+                    <h4 class="no__margin">Libros</h4>
+                    <ul>
+                        <li>Libros</li>
+                        <li>Libros</li>
+                        <li>Libros</li>
+                    </ul>
+                </li>
+                <li class="sub__menu">
+                    <h4 class="no__margin">Categorias</h4>
+                    <ul>
+                        <li>Categorias</li>
+                        <li>Categorias</li>
+                        <li>Categorias</li>
+                    </ul>
+                </li>
+                <li class="sub__menu">
+
+                    <h4 class="no__margin">Usuarios</h4>
+                    <ul>
+                        <li>Usuarios</li>
+                        <li>Usuarios</li>
+                        <li>Usuarios</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
         <script src="http://localhost/biblioteca2/js/sideBar/pushbar.js"></script>
         <script type="text/javascript">

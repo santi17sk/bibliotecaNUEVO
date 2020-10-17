@@ -521,6 +521,23 @@ h4 {
   cursor: pointer;
 }
 
+.menu__bar {
+  transition: all 300ms ;
+  background-color: #ac1d41;
+  color: white;
+}
+.menu__bar:hover {
+  box-shadow: 1px 1px 20px black;
+
+}
+.menu__bar li {
+list-style: none;
+}
+
+.sub__menu{
+  margin-bottom: 2rem;
+  
+}
 /*Dispositivos Móviles de 768PX*/
 
 @media (min-width: 425px) {
