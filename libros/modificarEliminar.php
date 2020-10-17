@@ -1,6 +1,7 @@
 <?php require_once '../libs/header.php'; ?>
 
 <main class="contenedor inicio">
+    <h2 class="centrar__texto">Actualizar Libro</h2>
     <div class="detalle__libros">
         <div class="img__libro--detalle">
             <img src="http://localhost/biblioteca2/assets/img/angeles-caidos-susan-ee-oceano-gran-travesia-juvenil-romantico-jr-cubierta-hd-calidad-portada.jpg" alt="">
