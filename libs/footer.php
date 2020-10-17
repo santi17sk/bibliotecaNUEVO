@@ -67,7 +67,7 @@
                 </li>
             </ul>
         </div>
-        <script src="http://localhost/biblioteca2/js/sideBar/pushbar.js"></script>
+        <script src="/biblioteca2/js/sideBar/pushbar.js"></script>
         <script type="text/javascript">
             const pushbar = new Pushbar({
                 blur: false,
