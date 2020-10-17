@@ -63,7 +63,7 @@ h4 {
   width: 90%;
   margin: 0 auto;
   padding: 2rem;
-  min-height: calc(100vh - 20%);
+  min-height: 80vh;
   background: #FFFAFA;
 }
 
@@ -76,6 +76,7 @@ h4 {
   border-radius: 2rem;
   border: 1px solid #575252;
 }
+
 
 .click {
   color: #7D7D7D;
@@ -109,6 +110,9 @@ h4 {
   background-color: #9819c2;
 }
 
+.btn__celeste {
+  background-color: #17A2B8;
+}
 /* ================================================= */
 
 /* Header */
@@ -375,6 +379,55 @@ h4 {
 
 /* ================================================= */
 
+/* ================================================= */
+
+/* Detalles libro */
+
+/* ================================================= */
+.detalles{
+  position: relative;
+}
+.positon__up{
+  position: absolute;
+  bottom: 0;
+}
+.detalles h4 {
+  margin: 1.5rem 0;
+}
+
+.format {
+  margin-bottom: 4rem;
+}
+
+.detalle__libros {
+  margin: 5rem auto;
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+
+.detalle__libros h2 {
+  margin: 2rem 0;
+}
+
+.categoria {
+  margin: 2rem 0 1rem 0;
+  padding: 1rem 2rem;
+  display: inline-block;
+  background-color: #eee;
+}
+
+.img__libro--detalle img {
+  margin: 0 auto;
+  border-radius: 2.5rem;
+  /* height: 60rem; */
+  width: 90%;
+}
+
+.autor{
+  color: orange;
+}
 /*------FOOTER-----*/
 
 .style__footer {
