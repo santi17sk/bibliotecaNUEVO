@@ -1,1 +1,4 @@
-img
+assets/img/*.jpg
+assets/img/*.jpeg
+assets/img/*.png
+assets/img/*.webp
