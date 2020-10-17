@@ -1,5 +1,6 @@
 <?php require_once './libs/header.php'; ?>
 <main class="contenedor inicio">
+
     <header class="libro__header">
         <h2>Libros Populares</h2>
         <input type="text" name="buscadorDeLibros" id="buscadorDeLibros" class="campo__input" placeholder="Buscar">

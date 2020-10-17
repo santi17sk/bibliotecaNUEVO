@@ -15,7 +15,7 @@
             <h4>Sinopsis</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At eveniet officiis eligendi, sapiente ut laudantium, architecto itaque sint deserunt eum aliquam est quas asperiores corrupti tempore, cupiditate repudiandae a. Numquam.</p>
             <div class="positon__up">
-                <button class="btn btn__celeste">Agregar al Carrito</button>
+                <button class="btn_l btn__celeste">Agregar al Carrito</button>
             </div>
         </div>
     </div>

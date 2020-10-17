@@ -77,7 +77,6 @@ h4 {
   border: 1px solid #575252;
 }
 
-
 .click {
   color: #7D7D7D;
   font-weight: 700;
@@ -102,6 +101,16 @@ h4 {
   transition: all 300ms;
 }
 
+.btn_l {
+  border-radius: 1rem;
+  padding: 2rem 3.5rem;
+  border: navajowhite;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 300ms;
+}
+
 .btn__ingresar {
   background: #3D2645;
 }
@@ -113,6 +122,7 @@ h4 {
 .btn__celeste {
   background-color: #17A2B8;
 }
+
 /* ================================================= */
 
 /* Header */
@@ -240,7 +250,7 @@ h4 {
 
 @media (min-width: 768px) {
   .libro__header {
-    margin-left: 35%;
+    /* margin-left: 35%; */
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 1rem;
@@ -384,13 +394,16 @@ h4 {
 /* Detalles libro */
 
 /* ================================================= */
-.detalles{
+
+.detalles {
   position: relative;
 }
-.positon__up{
+
+.positon__up {
   position: absolute;
   bottom: 0;
 }
+
 .detalles h4 {
   margin: 1.5rem 0;
 }
@@ -426,9 +439,10 @@ h4 {
   height: 500px;
 }
 
-.autor{
+.autor {
   color: orange;
 }
+
 /*------FOOTER-----*/
 
 .style__footer {
@@ -482,4 +496,20 @@ h4 {
   font-size: 2rem;
   background-color: #DA4167;
   padding: 1rem;
+}
+
+.sidebar {
+  position: absolute;
+  margin: 5.6rem 4.5rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+/*Dispositivos Móviles de 768PX*/
+@media (min-width: 425px) {
+  .sidebar {
+    position: absolute;
+    margin: 2rem 2.5rem;
+    font-size: 3rem;
+  }
 }
