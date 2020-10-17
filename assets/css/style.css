@@ -434,7 +434,7 @@ h4 {
 }
 
 
-.detalle__libros {
+.columnas__girs--2 {
   margin: 2rem auto;
   width: 75%;
   display: grid;
@@ -442,7 +442,7 @@ h4 {
   column-gap: 2rem;
 }
 
-.detalle__libros h2 {
+.columnas__girs--2 h2 {
   margin: 2rem 0;
 }
 

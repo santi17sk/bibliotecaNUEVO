@@ -2,7 +2,7 @@
 
 <main class="contenedor inicio">
     <h2 class="centrar__texto" style="margin: 1rem;">Crear Libro</h2>
-    <div class="detalle__libros">
+    <div class="columnas__girs--2">
         <div class="img__libro--detalle">
             <img src="http://localhost/biblioteca2/assets/img/imagenes/amante%20de%20libro.svg" alt="">
         </div>
