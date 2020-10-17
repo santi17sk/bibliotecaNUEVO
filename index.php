@@ -1,7 +1,8 @@
 <?php require_once './libs/header.php'; ?>
 <main class="contenedor inicio">
 
-    <header class="libro__header">
+    <header class="header__block">
+        <div><button class="btn btn__ok">Agregar</button></div>
         <h2>Libros Populares</h2>
         <input type="text" name="buscadorDeLibros" id="buscadorDeLibros" class="campo__input" placeholder="Buscar">
     </header>
