@@ -27,9 +27,14 @@ require_once 'funciones.php';
                     </a>
                 </div>
                 <div class="items">
-                    <a href="/biblioteca/"><i class="fas fa-user"></i> Usuario</a>
-                    <a href="/biblioteca/"><i class="fas fa-user-edit"></i> Editar Perfil</a>
-                    <a href="/biblioteca/"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                    <?php if(isset($_SESSION['User'])): ?>
+                        <a href="#"><i class="fas fa-user"></i> <?=$_SESSION['User']['Nick']?></a>
+                        <a href="/biblioteca2/usuarios/update.php"><i class="fas fa-user-edit"></i> Editar Perfil</a>
+                        <a href="/biblioteca2/acceso/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                    <?php else: ?>
+                        <a href="/biblioteca2/acceso/login.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                        <a href="/biblioteca2/acceso/register.php"><i class="fas fa-user-plus"></i> Registrarse</a>
+                    <?php endif; ?> 
                 </div>
             </div>
             <div class="links__secundarios">
@@ -40,6 +45,8 @@ require_once 'funciones.php';
             </div>
         </div>
     </header>
-    <div class="sidebar" data-pushbar-target="bar__menu" id="openMenu">
-    <i class="fas fa-ellipsis-v"></i>
-    </div>
+    <?php if(isset($_SESSION['User']) && $_SESSION['User']['Rol']=='admin') : ?>
+        <div class="sidebar" data-pushbar-target="bar__menu" id="openMenu">
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    <?php endif; ?>

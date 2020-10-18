@@ -4,7 +4,7 @@
     <h2 class="centrar__texto">Mas sobre Nosotros</h2>
     <div class="columnas__girs--7-3">
         <div>
-            <img src="../assets/img/imagenes/contacto.svg" alt="">
+            <img src="../assets/img/imagenes/camino al conocimiento.svg" alt="">
         </div>
         <div class="detalles">
             <p>"Tú Biblioteca" garantiza a sus usuarios la disponibilidad de la información y documentación necesaria, para el desarrollo de su formación académica e investigadora, así como proporciona una atención personalizada a la Comunidad Universitaria.</p>

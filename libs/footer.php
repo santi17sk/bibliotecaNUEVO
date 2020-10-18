@@ -41,28 +41,24 @@
             <h2 style="margin: 1rem;">Menu</h2>
             <ul>
                 <li class="sub__menu">
-                    <h4 class="no__margin">Libros</h4>
+                    <h4 class="no__margin">LIBROS</h4>
                     <ul>
-                        <li>Libros</li>
-                        <li>Libros</li>
-                        <li>Libros</li>
+                        <li><a href="/biblioteca2/libros/index.php"><i class="fas fa-angle-right"></i> Gestión de Libros</a></li>
+                        <li><a href="/biblioteca2/libros/create.php"><i class="fas fa-angle-right"></i> Agregar Libro</a></li>
                     </ul>
                 </li>
                 <li class="sub__menu">
-                    <h4 class="no__margin">Categorias</h4>
+                    <h4 class="no__margin">USUARIOS</h4>
                     <ul>
-                        <li>Categorias</li>
-                        <li>Categorias</li>
-                        <li>Categorias</li>
+                        <li><a href='/biblioteca2/usuarios/index.php'><i class="fas fa-angle-right"></i> Gestión de Usuarios</a></li>
                     </ul>
                 </li>
                 <li class="sub__menu">
 
-                    <h4 class="no__margin">Usuarios</h4>
+                    <h4 class="no__margin">CATEGORIAS</h4>
                     <ul>
-                        <li>Usuarios</li>
-                        <li>Usuarios</li>
-                        <li>Usuarios</li>
+                        <li><a href='/biblioteca2/categorias/index.php'><i class="fas fa-angle-right"></i> Gestión de categorias</a></li>
+                        <li><a href='/biblioteca2/categorias/create.php'><i class="fas fa-angle-right"></i> Agregar categoria</a></li>
                     </ul>
                 </li>
             </ul>

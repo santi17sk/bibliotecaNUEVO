@@ -1,9 +1,10 @@
-<?php require_once './libs/header.php'; ?>
+<?php require_once '../libs/header.php'; ?>
 <main class="contenedor inicio">
-
     <header class="header__block">
-        <div></div>
-        <h2>Libros Populares</h2>
+        <div>
+            <button class="btn btn__ok">Agregar</button>
+        </div>
+        <h2>Control de Libros</h2>
         <input type="text" name="buscadorDeLibros" id="buscadorDeLibros" class="campo__input" placeholder="Buscar">
     </header>
     <div class="libros__contenedor">
@@ -74,4 +75,4 @@
     </div>
 </main>
 
-<?php require_once './libs/footer.php'; ?>
+<?php require_once '../libs/footer.php'; ?>
