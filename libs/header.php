@@ -5,6 +5,7 @@ require_once 'funciones.php';
 ?>
 <!doctype html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,25 +28,38 @@ require_once 'funciones.php';
                     </a>
                 </div>
                 <div class="items">
-                    <?php if(isset($_SESSION['User'])): ?>
-                        <a href="#"><i class="fas fa-user"></i> <?=$_SESSION['User']['Nick']?></a>
+                    <?php if (isset($_SESSION['User'])) : ?>
+                        <a href="#"><i class="fas fa-user"></i> <?= $_SESSION['User']['Nick'] ?></a>
                         <a href="/biblioteca2/usuarios/update.php"><i class="fas fa-user-edit"></i> Editar Perfil</a>
                         <a href="/biblioteca2/acceso/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-                    <?php else: ?>
+                    <?php else : ?>
                         <a href="/biblioteca2/acceso/login.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
                         <a href="/biblioteca2/acceso/register.php"><i class="fas fa-user-plus"></i> Registrarse</a>
-                    <?php endif; ?> 
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="links__secundarios">
                 <a href="/biblioteca2/index.php"><i class="fas fa-home"></i> Inicio</a>
-                <a href="/biblioteca2/"><i class="fas fa-chevron-circle-down"></i> Categorías</a>
+                <ul class='drop'>
+                    <a href="/biblioteca2/"><i class="fas fa-chevron-circle-down"></i> Categorías</a>
+                    <div class="cat__drop">
+                        <li><a href="">grgregreg</a></li>
+                        <li><a href="">grgregrefdsfg</a></li>
+                        <li><a href="">grgreddddddgreg</a></li>
+                        <li><a href="">grgregreg</a></li>
+                        <li><a href="">grgregreg</a></li>
+                        <li><a href="">grgregreg</a></li>
+                        <li><a href="">grgregreg</a></li>
+                        <li><a href="">grgregreg</a></li>
+                        <li><a href="">grgregreg</a></li>
+                    </div>
+                </ul>
                 <a href="/biblioteca2/section/contacto.php"><i class="fab fa-weixin"></i> Contacto</a>
                 <a href="/biblioteca2/section/masSobreNos.php"><i class="fas fa-info-circle"></i> Sobre Nosotros</a>
             </div>
         </div>
     </header>
-    <?php if(isset($_SESSION['User']) && $_SESSION['User']['Rol']=='admin') : ?>
+    <?php if (isset($_SESSION['User']) && $_SESSION['User']['Rol'] == 'admin') : ?>
         <div class="sidebar" data-pushbar-target="bar__menu" id="openMenu">
             <i class="fas fa-ellipsis-v"></i>
         </div>
