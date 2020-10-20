@@ -6,19 +6,19 @@
                         <h2>Tu<span>Biblioteca</span></h2>
                     </a>
                     <div class="enlaces">
-                        <div class="bloques__enlaces">
+                        <div class="bloques__enlaces" style='text-aling:center'>
                             <div class="bloques">
-                                <a href="" class="fw__700">lorem ipsum1</a>
-                                <a href="">lorem ipsum1</a>
-                                <a href="">lorem ipsum1</a>
+                                <a href="" class="fw__700">Contacto</a>
+                                <a href="">Contacto@gmail</a>
+                                <a href="">387538</a>
                             </div>
                             <div class="bloques">
-                                <a href="" class="fw__700">lorem ipsum2</a>
-                                <a href="">lorem ipsum2</a>
-                                <a href="">lorem ipsum3</a>
+                                <a href="" class="fw__700">Encuentranos</a>
+                                <a href="">calle alvarado 6566</a>
+                                <a href="">Horarios de atencion 8 a 7</a>
                             </div>
                             <div class="bloques">
-                                <a href="" class="fw__700">lorem ipsum3</a>
+                                <a href="" class="fw__700"></a>
                                 <a href="">lorem ipsum3</a>
                                 <a href="">lorem ipsum3</a>
                             </div>
@@ -64,6 +64,8 @@
             </ul>
         </div>
         <script src="/biblioteca2/js/sideBar/pushbar.js"></script>
+        <script src="/biblioteca2/js/ajax/categorias/buscar.js"></script>
+
         <script type="text/javascript">
             const pushbar = new Pushbar({
                 blur: false,

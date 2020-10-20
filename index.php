@@ -9,7 +9,7 @@
 
     <header class="header__block">
         <div></div>
-        <h2>Libros Populares</h2>
+        <h2 id='tituloIndex'>Libros Populares</h2>
         <input type="text" name="buscadorDeLibros" id="buscadorDeLibros" class="campo__input" placeholder="Buscar">
     </header>
     <div class="libros__contenedor">
@@ -27,5 +27,5 @@
         <?php endif; ?>
     </div>
 </main>
-
+<script src="/biblioteca2/js/ajax/libros/buscadorlibros.js"></script>
 <?php require_once './libs/footer.php'; ?>

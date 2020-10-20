@@ -2,6 +2,9 @@
 session_start();
 require_once 'conexion.php';
 require_once 'funciones.php';
+$sql="SELECT * FROM categorias";
+$categorias=prepare_select($conexion,$sql);
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -38,20 +41,16 @@ require_once 'funciones.php';
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="links__secundarios">
+            <div class="links__secundarios" id='links__secundarios'>
                 <a href="/biblioteca2/index.php"><i class="fas fa-home"></i> Inicio</a>
                 <ul class='drop'>
                     <a href="/biblioteca2/"><i class="fas fa-chevron-circle-down"></i> Categorías</a>
                     <div class="cat__drop">
-                        <li><a href="">grgregreg</a></li>
-                        <li><a href="">grgregrefdsfg</a></li>
-                        <li><a href="">grgreddddddgreg</a></li>
-                        <li><a href="">grgregreg</a></li>
-                        <li><a href="">grgregreg</a></li>
-                        <li><a href="">grgregreg</a></li>
-                        <li><a href="">grgregreg</a></li>
-                        <li><a href="">grgregreg</a></li>
-                        <li><a href="">grgregreg</a></li>
+                        <?php if($categorias ->num_rows>0): ?>
+                            <?php while($categoria= $categorias ->fetch_assoc()): ?>
+                                <li><a href="" class='categoria__search' id="<?=$categoria['id_categoria']?>"><?=$categoria['nombre']?></a></li>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
                     </div>
                 </ul>
                 <a href="/biblioteca2/section/contacto.php"><i class="fab fa-weixin"></i> Contacto</a>

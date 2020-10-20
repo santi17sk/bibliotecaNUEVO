@@ -59,6 +59,7 @@ h4 {
   padding: 1.5rem;
   font-weight: 700;
   max-width: 80%;
+  margin: 28px auto;
 }
 .alert__ok{
   border: 2px solid  rgba(4, 68, 4, 0.2);  
@@ -94,9 +95,13 @@ h4 {
 }
 
 .click {
+  cursor: pointer;
   color: #7D7D7D;
   font-weight: 700;
   text-decoration: none;
+}
+.click:hover {
+  color: #4f4545;
 }
 
 .columnas__girs--6-6{
