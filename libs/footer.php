@@ -6,7 +6,7 @@
                         <h2>Tu<span>Biblioteca</span></h2>
                     </a>
                     <div class="enlaces">
-                        <div class="bloques__enlaces" style='text-aling:center'>
+                        <div class="bloques__enlaces">
                             <div class="bloques">
                                 <a href="" class="fw__700">Contacto</a>
                                 <a href="">Contacto@gmail</a>
