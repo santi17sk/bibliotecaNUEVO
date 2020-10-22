@@ -6,9 +6,9 @@ $usuarios = prepare_select($conexion, $sql);
 
 <main class="contenedor inicio">
     <header class="header__block">
-        <div><button class="btn btn__ok">Agregar</button></div>
+        <div></div>
         <h2 class="centrar__texto">Control de Usuarios</h2>
-        <div><input type="text" name="buscadorDeLibros" id="buscadorDeLibros" class="campo__input" placeholder="Buscar"></div>
+        <div></div>
     </header>
   
     <table class="tabla">

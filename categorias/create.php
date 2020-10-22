@@ -4,7 +4,7 @@ require_once '../libs/header.php';
 if(isset($_REQUEST['nombre'])){
     $name = $_REQUEST['nombre'];
     $sql = "INSERT INTO categorias (nombre) VALUES (?)";
-    $save = prepare_select($conexion, $sql,[$name]);  
+    $save = prepare_query($conexion, $sql,[$name]);  
     if($save->error){
         echo 'Error';
     }else{
@@ -17,7 +17,7 @@ if(isset($_REQUEST['nombre'])){
     <h2 class="centrar__texto">Crear Categoria</h2>
     <div class="columnas__girs--6-6">
         <div>
-            <img src="../assets/img/imagenes/contacto.svg" alt="">
+            <img src="../assets/img/imagenes/undraw_Process_re_gws7.svg" alt="">
         </div>
         <div class="contacto">
             <form method='POST' action="create.php">
@@ -31,4 +31,4 @@ if(isset($_REQUEST['nombre'])){
     </div>
 </main>
 
-<?php require_once '../libs/footer.php'; ?>,
+<?php require_once '../libs/footer.php'; ?>

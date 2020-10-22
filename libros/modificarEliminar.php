@@ -91,4 +91,5 @@ if (!empty($_GET['id']) && $_SESSION['User']['Rol'] === 'admin') {
     </div>
 </main>
 <script src="/biblioteca2/js/ajax/libros/update.js"></script>
+<script src="/biblioteca2/js/ajax/libros/eliminar.js"></script>
 <?php require_once '../libs/footer.php'; ?>

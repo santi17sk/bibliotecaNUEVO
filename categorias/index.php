@@ -18,8 +18,8 @@ $categorias = prepare_select($conexion, $sql);
                     <tr>
                         <td><?=$categoria['nombre']?></td>
                         <td>
-                            <button class="btn btn__ok acciones"><a href="#">Modificar</a></button>
-                            <button class="btn btn__danger acciones"><a class="delete" href="#" id="<?=$categoria['id_categoria']?>">Eliminar</a></button>
+                            <button class="btn btn__ok acciones"><a style="color:white; text-decoration:none;" href="/biblioteca2/categorias/update.php?idCategoria=<?=$categoria['id_categoria']?>">Modificar</a></button>
+                            <button class="btn btn__danger acciones"><a style="color:white; text-decoration:none;" class="delete" href="#" id="<?=$categoria['id_categoria']?>">Eliminar</a></button>
                         </td>
                     </tr>
                 <?php endwhile; ?>

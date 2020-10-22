@@ -15,12 +15,6 @@
             <img src="../assets/img/imagenes/undraw_profile_details_f8b7.svg" alt="">
         </div>
         <div class="contacto">
-        <div class="alert alert__danger">
-        Un error en el proceso
-        </div>
-        <div class="alert alert__ok">
-        Usuario Actualizado
-        </div>
             <form id="formulario" >
                 <input id="idUsuario" type="hidden" value="<?=$_SESSION['User']['Id_Usuario']?>">
                 <div class='usuario__update'>

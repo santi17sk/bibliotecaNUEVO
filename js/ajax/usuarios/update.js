@@ -43,9 +43,11 @@
 
         xmlhttp.onreadystatechange = function(){
             if(xmlhttp.readyState === 4){
-                if(xmlhttp.responseText === 'Exito'){
-                    mostrarAlerta('Actualizado Con Exito!');
+                if(xmlhttp.responseText === 'Error'){
+                    mostrarAlerta('¡Hubo un error al actualizar los datos!', 'error');
+                    return;
                 }
+                mostrarAlerta('¡Actualizado Con Exito!');
             }
         };
 
@@ -53,11 +55,16 @@
         xmlhttp.send(`idUsuario=${idUsuario}&Nombre=${nombre}&Apellido=${apellido}&Dni=${dni}&Email=${email}&Telefono=${telefono}&Domicilio=${domicilio}`);
     }
 
-    function mostrarAlerta(mensaje){
+    function mostrarAlerta(mensaje, tipo){
         const divMensaje = document.createElement('div');
-
         divMensaje.textContent = mensaje;
-        
+
+        if(tipo === 'error'){
+            divMensaje.classList.add('alert', 'alert__danger');
+        }else{
+            divMensaje.classList.add('alert', 'alert__ok');
+        }
+
         formulario.appendChild(divMensaje);
 
         setTimeout(()=>{

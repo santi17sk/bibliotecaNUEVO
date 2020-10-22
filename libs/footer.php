@@ -9,25 +9,25 @@
                         <div class="bloques__enlaces">
                             <div class="bloques">
                                 <a href="" class="fw__700">Contacto</a>
-                                <a href="">Contacto@gmail</a>
-                                <a href="">387538</a>
+                                <a href=""><i class="fas fa-envelope"></i> Contacto@gmail.com</a>
+                                <a href=""><i class="fas fa-phone-square-alt"></i> 387538</a>
                             </div>
                             <div class="bloques">
                                 <a href="" class="fw__700">Encuentranos</a>
-                                <a href="">calle alvarado 6566</a>
-                                <a href="">Horarios de atencion 8 a 7</a>
+                                <a href=""><i class="fas fa-road"></i> Calle alvarado 6566</a>
+                                <a href=""><i class="fas fa-clock"></i> Horarios de atencion 8 a 7</a>
                             </div>
                             <div class="bloques">
                                 <a href="" class="fw__700"></a>
-                                <a href="">lorem ipsum3</a>
-                                <a href="">lorem ipsum3</a>
+                                <a href=""></a>
+                                <a href=""></a>
                             </div>
                         </div>
                     </div>
                     <div class="redes__sociales">
-                        <p class="fw__700">Síguenos</p>
-                        <p><a href="">Facebook</a></p>
-                        <p><a href="">YouTube</a></p>
+                        <p class="fw__700"><i class="fas fa-plus"></i> Síguenos</p>
+                        <p><a href=""><i class="fab fa-facebook"></i> Facebook</a></p>
+                        <p><a href=""><i class="fab fa-youtube"></i> YouTube</a></p>
                     </div>
                 </div>
             </div>

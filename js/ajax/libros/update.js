@@ -46,7 +46,6 @@
         xmlhttp.onreadystatechange =  function(){
             if(xmlhttp.readyState === 4){
                 if(xmlhttp.responseText === 'exito'){
-                    console.log('BIEN')
                     mostrarAlerta('¡Modificado Exitosamente!');
 
                     setTimeout(()=>{

@@ -16,7 +16,7 @@ if(!empty($_POST['idUsuario']) && !empty($_POST['Nombre']) && !empty($_POST['Ape
     $save=prepare_query($conexion,$sql,[$nombre,$apellido,$dni,$email,$telefono,$domicilio,$id_usuario]);
 
     if($save->error){
-        echo "Error: ". $sql . "" . $save->error;
+        echo "Error";
     }else{
         echo 'Exito';
     }
