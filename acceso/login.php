@@ -12,6 +12,16 @@ if(!empty($_POST['Email']) && !empty($_POST['Clave']))
         $usuario = $usuarios->fetch_assoc();
         if($usuario['Clave'] == $clave){
             $_SESSION['User'] = $usuario;
+            $idUsuario = $_SESSION['User']['Id_Usuario'];
+            $sqlExistenciaCarrito = "SELECT estado, id_carrito
+            from carrito
+            where estado = 0
+            and Id_Usuario = $idUsuario";
+            $carrito = prepare_select($conexion, $sqlExistenciaCarrito);
+            if ($carrito->num_rows > 0) {
+                $carrito = $carrito->fetch_assoc();
+                $_SESSION['carrito'] = $carrito;
+            }
             header('Location: /biblioteca2/index.php');
         }
     }

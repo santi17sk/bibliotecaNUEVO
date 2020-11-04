@@ -8,14 +8,13 @@ $libros = prepare_select($conexion, $sql);
 if ($libros->num_rows>0) {
     $libro = $libros->fetch_assoc();
 }
-var_dump($libro);
 
 }
 ?>
 <main class="contenedor inicio">
     <div class="columnas__girs--2">
         <div class="img__libro--detalle">
-            <img src="http://localhost/biblioteca2/libros/img/<?=$libro['nombre']?>" alt="">
+            <img src="/biblioteca2/libros/img/<?=$libro['nombre']?>" alt="">
         </div>
         <div class="detalles">
             <h2><?=$libro['titulo']?></h2>
@@ -27,10 +26,10 @@ var_dump($libro);
             <h4>Sinopsis</h4>
             <p><?=$libro['descripcion']?></p>
             <div class="positon__up">
-                <button class="btn_l btn__celeste">Agregar al Carrito</button>
+                <button class="btn_l btn__celeste" id="boton" data-id="<?=$libro['id_libro']?>">Agregar al Carrito</button>
             </div>
         </div>
     </div>
 </main>
-
+<script src="/biblioteca2/js/ajax/usuarios/agregarCarrito.js"></script>
 <?php require_once '../../libs/footer.php'; ?>

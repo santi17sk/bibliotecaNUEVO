@@ -53,6 +53,7 @@ $categorias=prepare_select($conexion,$sql);
                         <?php endif; ?>
                     </div>
                 </ul>
+                <a href="/biblioteca2/"><i class="fas fa-book"></i> Pedidos </a>
                 <a href="/biblioteca2/section/contacto.php"><i class="fab fa-weixin"></i> Contacto</a>
                 <a href="/biblioteca2/section/masSobreNos.php"><i class="fas fa-info-circle"></i> Sobre Nosotros</a>
             </div>
