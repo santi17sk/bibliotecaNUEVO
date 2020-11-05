@@ -6,7 +6,8 @@
 
     const agregarLibro = (e) => {
         const cantidad = document.getElementById('numberDePedidos');
-        console.log(cantidad)
+        const item = document.getElementById('itemPedidos');
+        console.log(cantidad, item)
         const idLibro = e.target.getAttribute('data-id');
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.open('POST', '/biblioteca2/usuarios/ajax/agregarCarrito.php');
@@ -18,9 +19,11 @@
                         alert(data.error)
                     } else {
                         if (data.cantidad === 1) {
-                            alert('agregado con exito')
+                            item.style.display = "block";
+                            cantidad.innerHTML = data.cantidad
+                        } else {
+                            cantidad.innerHTML = data.cantidad
                         }
-                        cantidad.innerHTML = data.cantidad
                     }
                 }
             }
