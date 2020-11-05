@@ -17,6 +17,9 @@
                     if (data.error != '') {
                         alert(data.error)
                     } else {
+                        if (data.cantidad === 1) {
+                            alert('agregado con exito')
+                        }
                         cantidad.innerHTML = data.cantidad
                     }
                 }
