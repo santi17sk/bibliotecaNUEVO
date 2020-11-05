@@ -9,7 +9,9 @@
         xmlhttp.open('POST', '/biblioteca2/usuarios/ajax/agregarCarrito.php');
         xmlhttp.onreadystatechange = function(){
             if(xmlhttp.readyState === 4){
-                alert(this.response);
+                if(this.response !== '') {
+                    alert(this.response);
+                }
             }
         };
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

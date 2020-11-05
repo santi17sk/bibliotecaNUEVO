@@ -2,9 +2,22 @@
 session_start();
 require_once 'conexion.php';
 require_once 'funciones.php';
-$sql="SELECT * FROM categorias";
-$categorias=prepare_select($conexion,$sql);
+$sql = "SELECT * FROM categorias";
+$categorias = prepare_select($conexion, $sql);
 
+
+if (!empty($_SESSION['User'])) {
+    
+    $idUsuario = $_SESSION['User']['Id_Usuario'];
+    $estadoCarrito = "SELECT COUNT(*) from carrito where estado = 0 and Id_Usuario = $idUsuario";
+    $estado = prepare_select($conexion, $estadoCarrito);
+    $estado = $estado->fetch_assoc();
+    if ($estado['COUNT(*)'] == 1) {
+        $sqlCantidad = "SELECT count(*) from det_carrito where id_carrito = ?";
+        $existProd = prepare_select($conexion, $sqlCantidad, [$_SESSION['carrito']['id_carrito']]);
+        $existProd = $existProd->fetch_assoc();
+    }
+}
 ?>
 <!doctype html>
 <html lang="es">
@@ -33,12 +46,17 @@ $categorias=prepare_select($conexion,$sql);
                 <div class="items">
                     <?php if (isset($_SESSION['User'])) : ?>
                         <a href="#"><i class="fas fa-user"></i> <?= $_SESSION['User']['Nick'] ?></a>
-                        <a href="/biblioteca2/usuarios/update.php"><i class="fas fa-user-edit"></i> Editar Perfil</a>
-                        <a href="/biblioteca2/acceso/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-                    <?php else : ?>
-                        <a href="/biblioteca2/acceso/login.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
-                        <a href="/biblioteca2/acceso/register.php"><i class="fas fa-user-plus"></i> Registrarse</a>
-                    <?php endif; ?>
+                        <?php if (!empty($existProd['count(*)'])) : ?>
+                            <a href="/biblioteca2/"><i class="fas fa-book"></i> Pedidos <span id='numberDePedidos'><?= $existProd['count(*)'] ?></span></a>
+                        <?php else : ?>
+                        <span id="indiceProductosCarrito"></span></a>
+                    <?php endif ?>
+                    <a href="/biblioteca2/usuarios/update.php"><i class="fas fa-user-edit"></i> Editar Perfil</a>
+                    <a href="/biblioteca2/acceso/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                <?php else : ?>
+                    <a href="/biblioteca2/acceso/login.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                    <a href="/biblioteca2/acceso/register.php"><i class="fas fa-user-plus"></i> Registrarse</a>
+                <?php endif; ?>
                 </div>
             </div>
             <div class="links__secundarios" id='links__secundarios'>
@@ -46,14 +64,13 @@ $categorias=prepare_select($conexion,$sql);
                 <ul class='drop'>
                     <a href="/biblioteca2/"><i class="fas fa-chevron-circle-down"></i> Categorías</a>
                     <div class="cat__drop">
-                        <?php if($categorias ->num_rows>0): ?>
-                            <?php while($categoria= $categorias ->fetch_assoc()): ?>
-                                <li><a href="" class='categoria__search' id="<?=$categoria['id_categoria']?>"><?=$categoria['nombre']?></a></li>
+                        <?php if ($categorias->num_rows > 0) : ?>
+                            <?php while ($categoria = $categorias->fetch_assoc()) : ?>
+                                <li><a href="" class='categoria__search' id="<?= $categoria['id_categoria'] ?>"><?= $categoria['nombre'] ?></a></li>
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </div>
                 </ul>
-                <a href="/biblioteca2/"><i class="fas fa-book"></i> Pedidos </a>
                 <a href="/biblioteca2/section/contacto.php"><i class="fab fa-weixin"></i> Contacto</a>
                 <a href="/biblioteca2/section/masSobreNos.php"><i class="fas fa-info-circle"></i> Sobre Nosotros</a>
             </div>
