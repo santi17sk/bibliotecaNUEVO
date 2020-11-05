@@ -4,7 +4,6 @@ require_once '../../libs/header.php';
 
 <style>
     .pedido__res {
-        /* border: 1px solid green; */
         margin-bottom: 3rem;
         background-color: #eee;
         border-radius: 3rem;
@@ -12,8 +11,8 @@ require_once '../../libs/header.php';
     }
 
     .img__pedido {
-        width: 300px;
-        height: 400px;
+        width: 100px;
+        height: 140px;
         text-align: center;
     }
 
@@ -22,10 +21,29 @@ require_once '../../libs/header.php';
     }
 </style>
 <main class="contenedor inicio">
-    <h2 class="centrar__texto">Sus Reservas</h2>
-    <div class="contenedor__pedidos">
-
-    </div>
+    <h2>Sus Reservas</h2>
+    <table class="tabla">
+        <thead>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Autor</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td><img src="/biblioteca2/section/51+NUIgEc9L._AC_UL600_SR462,600_.jpg" alt="" class="img__pedido"></td>
+                <td>
+                    clear code
+                </td>
+                <td>
+                    pablo cuelo
+                </td>
+                <td>
+                <button class="btn btn__ok acciones"><a style="color:white; text-decoration:none;" href="/biblioteca2/categorias/update.php?idCategoria=<?= $categoria['id_categoria'] ?>">Modificar</a></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </main>
 <?php
 require_once '../../libs/footer.php';
