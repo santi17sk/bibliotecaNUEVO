@@ -39,7 +39,7 @@ if (!empty($_SESSION['User'])) {
         <div class="contenedor">
             <div class="barra">
                 <div class="titulo">
-                    <a href="../">
+                    <a href="http://localhost/biblioteca2/">
                         <h1>Tu<span class="fw__900">Biblioteca</span></h1>
                     </a>
                 </div>

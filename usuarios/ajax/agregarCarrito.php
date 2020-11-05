@@ -17,22 +17,23 @@ if (!empty($_SESSION['carrito']['id_carrito'])) {
     $idCarritoAgregar = $_SESSION['carrito']['id_carrito'];
 }
 
-if(!empty($_REQUEST['idLibro']) && isset($_SESSION['User'])){
+if (!empty($_REQUEST['idLibro']) && isset($_SESSION['User'])) {
     $idLibro = $_REQUEST['idLibro'];
 
     $sql = "SELECT COUNT(*) FROM det_carrito WHERE id_carrito = ? AND id_libro = ?";
     $detCounts = prepare_select($conexion, $sql, [$idCarritoAgregar, $idLibro]);
-    if($detCounts->num_rows > 0){
+    if ($detCounts->num_rows > 0) {
         $detCount = $detCounts->fetch_assoc();
-        if($detCount['COUNT(*)'] > 0){
-            echo 'Solo un libro por persona';
-        }else {
-            $sql ="INSERT INTO biblioteca.det_carrito (id_carrito, id_libro, cantidad) VALUES (?, ?, ?)";
-            prepare_query($conexion,$sql,[$idCarritoAgregar,$idLibro,1]);
+        if ($detCount['COUNT(*)'] > 0) {
+            $errorCantidad = 'Solo un libro por persona';
+        } else {
+            $sql = "INSERT INTO biblioteca.det_carrito (id_carrito, id_libro, cantidad) VALUES (?, ?, ?)";
+            prepare_query($conexion, $sql, [$idCarritoAgregar, $idLibro, 1]);
+            $errorCantidad = '';
         }
-        
     }
+    $cantidadLibro = "SELECT count(*) from det_carrito where id_carrito =?";
+    $cantidad = prepare_select($conexion, $cantidadLibro, [$idCarritoAgregar]);
+    $cantidad = $cantidad->fetch_assoc();
+    echo json_encode(['cantidad' => $cantidad['count(*)'], 'error' => $errorCantidad]);
 }
-
-
-?>
