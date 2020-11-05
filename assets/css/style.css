@@ -675,3 +675,34 @@ h4 {
   margin: 1rem 0;
   align-items: center;
 }
+
+.comentario__Sugerencia {
+  border: 2px solid #8C8C8C;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 5px 5px 2px;
+}
+
+.foto__comentario {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.perfil__comentario {
+  display: flex;
+  align-items: center
+}
+
+.name__usuario--comentaio {
+  font-size: 2rem;
+  margin-left: 1.2rem;
+}
+
+.comentario__ingresar {
+  overflow: auto;
+  width: 100%;
+  height: 10rem;
+  resize: none;
+  margin-top: 1rem;
+}
