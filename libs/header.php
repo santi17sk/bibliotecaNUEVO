@@ -47,9 +47,9 @@ if (!empty($_SESSION['User'])) {
                     <?php if (isset($_SESSION['User'])) : ?>
                         <a href="#"><i class="fas fa-user"></i> <?= $_SESSION['User']['Nick'] ?></a>
                         <?php if (!empty($existProd['count(*)'])) : ?>
-                            <a href="/biblioteca2/"><i class="fas fa-book"></i> Pedidos <span id='numberDePedidos'><?= $existProd['count(*)'] ?></span></a>
+                            <a href="/biblioteca2/views/pedidos/detallePedidos.php"><i class="fas fa-book"></i> Pedidos <span id='numberDePedidos'><?= $existProd['count(*)'] ?></span></a>
                         <?php else : ?>
-                            <a href="/biblioteca2/" style="display: none;" id="itemPedidos"><i class="fas fa-book"></i> Pedidos <span id='numberDePedidos'></span></a>
+                            <a href="/biblioteca2/views/pedidos/detallePedidos.php" style="display: none;" id="itemPedidos"><i class="fas fa-book"></i> Pedidos <span id='numberDePedidos'></span></a>
                     <?php endif ?>
                     <a href="/biblioteca2/usuarios/update.php"><i class="fas fa-user-edit"></i> Editar Perfil</a>
                     <a href="/biblioteca2/acceso/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
