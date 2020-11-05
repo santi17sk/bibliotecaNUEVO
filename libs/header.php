@@ -72,6 +72,9 @@ if (!empty($_SESSION['User'])) {
                     </div>
                 </ul>
                 <a href="/biblioteca2/section/contacto.php"><i class="fab fa-weixin"></i> Contacto</a>
+                <?php if(isset($_SESSION['User'])): ?>
+                    <a href="/biblioteca2/section/sugerencias.php"><i class="fab fa-weixin"></i> Sugerencias</a>
+                <?php endif; ?>
                 <a href="/biblioteca2/section/masSobreNos.php"><i class="fas fa-info-circle"></i> Sobre Nosotros</a>
             </div>
         </div>
