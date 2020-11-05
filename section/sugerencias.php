@@ -1,6 +1,6 @@
 <?php
 require_once '../libs/header.php';
-$sql = "SELECT * FROM sugerencias order by rand() LIMIT 3";
+$sql = "SELECT s.*,u.Nick FROM sugerencias s inner join usuarios u where s.Id_Usuario=  u.Id_Usuario order by rand() LIMIT 3";
 
 $comentarios = prepare_select($conexion, $sql);
 $com = 1;
@@ -15,7 +15,7 @@ $com = 1;
                     <div class="comentario__Sugerencia" id="<?= "comentario$com" ?>">
                         <div class="perfil__comentario">
                             <img src="./51+NUIgEc9L._AC_UL600_SR462,600_.jpg" alt="" class="foto__comentario">
-                            <span class="name__usuario--comentaio">Jose perez cballos</span>
+                            <span class="name__usuario--comentaio"><?= $comentario['Nick'] ?></span>
                         </div>
                         <p>
                             <?= $comentario['sugerencia'] ?>
@@ -27,7 +27,7 @@ $com = 1;
             <div>
                 <div class="perfil__comentario">
                     <img src="./51+NUIgEc9L._AC_UL600_SR462,600_.jpg" id="foto__usuario" class="foto__comentario">
-                    <span class="name__usuario--comentaio" id="<?= $_SESSION['User']['Id_Usuario'] ?>"><?=$_SESSION['User']['Nick']?></span>
+                    <span class="name__usuario--comentaio" id="<?= $_SESSION['User']['Id_Usuario'] ?>"><?= $_SESSION['User']['Nick'] ?></span>
                     <input type="hidden" value="<?= $_SESSION['User']['Id_Usuario'] ?>" id="idUsuario">
                 </div>
                 <textarea class="comentario__ingresar" id="sugerencia"></textarea>
