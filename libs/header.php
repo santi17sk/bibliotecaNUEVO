@@ -7,7 +7,7 @@ $categorias = prepare_select($conexion, $sql);
 
 
 if (!empty($_SESSION['User'])) {
-    
+
     $idUsuario = $_SESSION['User']['Id_Usuario'];
     $estadoCarrito = "SELECT COUNT(*) from carrito where estado = 0 and Id_Usuario = $idUsuario";
     $estado = prepare_select($conexion, $estadoCarrito);
@@ -50,13 +50,13 @@ if (!empty($_SESSION['User'])) {
                             <a href="/biblioteca2/views/pedidos/detallePedidos.php"><i class="fas fa-book"></i> Pedidos <span id='numberDePedidos'><?= $existProd['count(*)'] ?></span></a>
                         <?php else : ?>
                             <a href="/biblioteca2/views/pedidos/detallePedidos.php" style="display: none;" id="itemPedidos"><i class="fas fa-book"></i> Pedidos <span id='numberDePedidos'></span></a>
-                    <?php endif ?>
-                    <a href="/biblioteca2/usuarios/update.php"><i class="fas fa-user-edit"></i> Editar Perfil</a>
-                    <a href="/biblioteca2/acceso/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-                <?php else : ?>
-                    <a href="/biblioteca2/acceso/login.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
-                    <a href="/biblioteca2/acceso/register.php"><i class="fas fa-user-plus"></i> Registrarse</a>
-                <?php endif; ?>
+                        <?php endif ?>
+                        <a href="/biblioteca2/usuarios/update.php"><i class="fas fa-user-edit"></i> Editar Perfil</a>
+                        <a href="/biblioteca2/acceso/logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                    <?php else : ?>
+                        <a href="/biblioteca2/acceso/login.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                        <a href="/biblioteca2/acceso/register.php"><i class="fas fa-user-plus"></i> Registrarse</a>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="links__secundarios" id='links__secundarios'>
@@ -72,7 +72,7 @@ if (!empty($_SESSION['User'])) {
                     </div>
                 </ul>
                 <a href="/biblioteca2/section/contacto.php"><i class="fab fa-weixin"></i> Contacto</a>
-                <?php if(isset($_SESSION['User'])): ?>
+                <?php if (isset($_SESSION['User'])) : ?>
                     <a href="/biblioteca2/section/sugerencias.php"><i class="fab fa-weixin"></i> Sugerencias</a>
                 <?php endif; ?>
                 <a href="/biblioteca2/section/masSobreNos.php"><i class="fas fa-info-circle"></i> Sobre Nosotros</a>
