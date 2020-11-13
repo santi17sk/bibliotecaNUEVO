@@ -43,7 +43,7 @@ if(isset($_POST['Registrar']) && !empty($_POST['NickName']) && !empty($_POST['Cl
                 <input type="submit" name="Registrar" class="btn btn__ingresar" value="Registrarse">
             </form>
             <div class="body__card--footer">
-                <p>¿No Eres Miembro? <span><a href="/biblioteca2/acceso/login.php" class="click">Click Aqui</a></span></p>
+                <p>¿Ya tienes cuenta En TuBiblioteca? <span><a href="/biblioteca2/acceso/login.php" class="click">Click Aqui</a></span></p>
             </div>
         </div>
     </div>

@@ -65,8 +65,9 @@ if (isset($_SESSION['User'])) {
             <?php endif; ?>
         </tbody>
     </table>
-    
+
 </main>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="/biblioteca2/js/ajax/usuarios/cancelarCarrito.js"></script>
 <script src="/biblioteca2/js/ajax/usuarios/reservar.js"></script>
 <?php

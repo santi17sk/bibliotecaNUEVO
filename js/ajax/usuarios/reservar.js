@@ -1,8 +1,7 @@
 (function () {
+
     const btnPedidos = document.getElementById('reservarPedido')
     btnPedidos.addEventListener('click', () => {
-
-
         const xhr = new XMLHttpRequest()
         xhr.open('POST', '/biblioteca2/usuarios/ajax/reservarCarrito.php', true)
         xhr.onload = () => {
@@ -15,7 +14,5 @@
             }
         }
         xhr.send()
-
-
     })
 }())

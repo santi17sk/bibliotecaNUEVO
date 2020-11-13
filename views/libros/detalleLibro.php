@@ -34,5 +34,6 @@ if ($_REQUEST['idLibro']) {
         </div>
     </div>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="/biblioteca2/js/ajax/usuarios/agregarCarrito.js"></script>
 <?php require_once '../../libs/footer.php'; ?>

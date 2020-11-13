@@ -63,6 +63,7 @@
                 </li>
             </ul>
         </div>
+        
         <script src="/biblioteca2/js/sideBar/pushbar.js"></script>
         <script src="/biblioteca2/js/ajax/categorias/buscar.js"></script>
         <script src="/biblioteca2/js/app.js"></script>

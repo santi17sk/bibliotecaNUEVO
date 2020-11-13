@@ -1,16 +1,15 @@
 <?php require_once '../libs/header.php';
 
-if(!empty($_POST['Email']) && !empty($_POST['Clave']))
-{   
-    
+if (!empty($_POST['Email']) && !empty($_POST['Clave'])) {
+
     $email = $_POST['Email'];
     $clave = $_POST['Clave'];
-    $sql="SELECT * FROM usuarios WHERE Email=?";
-    $usuarios=prepare_select($conexion,$sql,[$email]);
-    
-    if($usuarios->num_rows > 0){
+    $sql = "SELECT * FROM usuarios WHERE Email=?";
+    $usuarios = prepare_select($conexion, $sql, [$email]);
+
+    if ($usuarios->num_rows > 0) {
         $usuario = $usuarios->fetch_assoc();
-        if($usuario['Clave'] == $clave){
+        if ($usuario['Clave'] == $clave) {
             $_SESSION['User'] = $usuario;
             $idUsuario = $_SESSION['User']['Id_Usuario'];
             $sqlExistenciaCarrito = "SELECT estado, id_carrito
@@ -25,7 +24,6 @@ if(!empty($_POST['Email']) && !empty($_POST['Clave']))
             header('Location: /biblioteca2/index.php');
         }
     }
-    
 }
 ?>
 <main class="contenedor inicio">
@@ -44,9 +42,12 @@ if(!empty($_POST['Email']) && !empty($_POST['Clave']))
                 <input type="submit" name="Enviar" value="Ingresar" class="btn btn__ingresar">
             </form>
             <div class="body__card--footer">
-                <p>¿No Eres Miembro? <span><a href="" class="click">Click Aqui</a></span></p>
+                <p>¿No Eres Miembro? <span><a href="register.php" class="click">Click Aqui</a></span></p>
+                <p>No recuerdo mi Contraseña <span class="click" id="recuperarPassword">Click Aqui</span></p>
             </div>
         </div>
     </div>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="/biblioteca2/js/ajax/usuarios/recuperarPass.js"></script>
 <?php require_once '../libs/footer.php' ?>
