@@ -8,12 +8,22 @@ if (!empty($_SESSION['carrito']['id_carrito'])) {
     $idCarritoAgregar = $_SESSION['carrito']['id_carrito'];
 } else {
     // si no esta definido, creamos un carrito
+
+    do {
+        $codigoReserva = rand(1111, 9999);
+        $noRepetCodigos = "SELECT count(*) from biblioteca.carrito where sCodigo = $codigoReserva";
+        $count = prepare_select($conexion, $noRepetCodigos);
+        $count = $count->fetch_assoc();
+        $count = $count['count(*)'];
+    } while ($count != 0);
+
     $idUsuario = $_SESSION['User']['Id_Usuario'];
     $fecha = date('Y-m-d H:i:s');
-    $sqlCrearCarrito = "INSERT INTO carrito (Id_Usuario, fecha, estado) VALUES (?,?,?);";
-    $crearCarrito = prepare_query($conexion, $sqlCrearCarrito, [$idUsuario, $fecha, 0]);
+    $sqlCrearCarrito = "INSERT INTO carrito (Id_Usuario, fecha, estado,sCodigo) VALUES (?,?,?,?);";
+    $crearCarrito = prepare_query($conexion, $sqlCrearCarrito, [$idUsuario, $fecha, 0,$codigoReserva]);
     $_SESSION['carrito']['estado'] = 0;
     $_SESSION['carrito']['id_carrito'] = $crearCarrito->insert_id;
+    $_SESSION['carrito']['sCodigo'] = $codigoReserva;
     $idCarritoAgregar = $_SESSION['carrito']['id_carrito'];
 }
 

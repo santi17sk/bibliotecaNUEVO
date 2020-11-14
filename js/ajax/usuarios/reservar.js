@@ -7,9 +7,22 @@
         xhr.onload = () => {
             if (xhr.status === 200) {
                 if (xhr.response == 1) {
-                    alert('Su reserva se realizo con exito')
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Reservado con exitro',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    
                 } else {
-                    alert('Ocurrio un problema con su reserva')
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Tubimos Problemas',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }
             }
         }
