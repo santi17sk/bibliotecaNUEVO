@@ -60,6 +60,16 @@
                         <li><a href='/biblioteca2/categorias/index.php'><i class="fas fa-angle-right"></i> Gestión de categorias</a></li>
                         <li><a href='/biblioteca2/categorias/create.php'><i class="fas fa-angle-right"></i> Agregar categoria</a></li>
                     </ul>
+                    <h4 class="no__margin">Pedidos</h4>
+                    <ul>
+                        <li><a href='/biblioteca2/views/pedidos/listaPedidos.php'><i class="fas fa-angle-right"></i> Gestión de Pedidos</a></li>
+                        <li><a href='/biblioteca2/views/pedidos/historialPedidos.php'><i class="fas fa-angle-right"></i> Historial de Pedidos</a></li>
+                    </ul>
+                    <h4 class="no__margin">Informes</h4>
+                    <ul>
+                        <li><a href='/biblioteca2/views/informes/categoriasTop.php'><i class="fas fa-angle-right"></i> categorias mas Reservada</a></li>
+                        <li><a href='/biblioteca2/views/informes/librosTop.php'><i class="fas fa-angle-right"></i> Libros mas resrvados</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
