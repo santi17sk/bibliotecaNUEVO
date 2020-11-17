@@ -18,9 +18,8 @@ $listaPedidos = prepare_select($conexion, $allPedidos);
     <header class="header__block">
         <div></div>
         <h2 id='tituloIndex'>Reserva de Libros</h2>
-        <input type="text" name="buscadorDeLibros" id="buscadorDeLibros" class="campo__input" placeholder="Buscar por el codigo">
+        <input type="text" name="buscadorDeLibros" id="buscadorDePedidos" class="campo__input" placeholder="Buscar por el codigo">
     </header>
-    <table>
         <table class="tabla">
             <thead>
                 <th>Estado del Pedido</th>
@@ -75,7 +74,6 @@ $listaPedidos = prepare_select($conexion, $allPedidos);
                 <?php endif ?>
             </tbody>
         </table>
-    </table>
 
 </main>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

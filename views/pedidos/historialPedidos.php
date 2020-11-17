@@ -22,9 +22,9 @@ $listaPedidos = prepare_select($conexion, $allPedidos);
         <table class="tabla">
             <thead>
                 <th>Estado del Pedido</th>
+                <th>Devolucion</th>
                 <th>Codigo de Reserva</th>
                 <th>Usuario</th>
-                <th>Fecha de Reserva</th>
                 <th>Fecha de Devolucion</th>
                 <th>Acciones</th>
             </thead>
@@ -35,16 +35,14 @@ $listaPedidos = prepare_select($conexion, $allPedidos);
                             <td id="<?= "estadoPedido$listaPedido[id_carrito]" ?>">
                                 devuelto
                             </td>
+                            <td id="<?= "estadoPedido$listaPedido[id_carrito]" ?>">
+                            <?= $listaPedido['EstadoDevolucion'] ?>
+                            </td>
                             <td>
                                 <?= $listaPedido['sCodigo'] ?>
                             </td>
                             <td>
                                 <?= $listaPedido['Nick'] ?>
-                            </td>
-                            <td>
-                                <span>
-                                    <?= $listaPedido['fechaRes'] ?>
-                                </span>
                             </td>
                             <td>
                                 <span>

@@ -1,6 +1,7 @@
 (function () {
     const tbody = document.querySelector('#tbody');
     console.log(tbody);
+    // Detalles del pedido
     document.addEventListener('DOMContentLoaded', () => {
         tbody.addEventListener('click', (e) => {
             const dataId = e.target.getAttribute('data-id')
@@ -31,6 +32,7 @@
                 xmlhttp.send(`idCarrito=${idCarrito}`);
             }
         });
+        // Cambio de estado del pedido
         tbody.addEventListener('click', (e) => {
             if (e.target.classList.contains('btn')) {
                 const dataId = e.target.getAttribute('data-id')
@@ -52,7 +54,15 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                        } else {
+                        } else if(elementos.estado == 1){
+                             Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'este libro esta devuelto tarde',
+                            })
+                            const tr = e.target.parentElement.parentElement.parentElement;
+                            tr.remove();
+                        }else {
                             contBtn.innerHTML = elementos.btn
                             contEstado.innerHTML = elementos.estado
                         }
@@ -61,6 +71,18 @@
                 xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xmlhttp.send(`idCarrito=${dataId}`);
             }
+        })
+
+        const buscadorPedidos = document.getElementById('buscadorDePedidos');
+        buscadorPedidos.addEventListener('keyup', () => {
+            let clavePedido = buscadorPedidos.value
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', '/biblioteca2/usuarios/ajax/buscarPedido.php', true)
+            xhr.onload = () => {
+                tbody.innerHTML = xhr.response
+            }
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`clave=${clavePedido}`);
         })
     });
 

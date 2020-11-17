@@ -3,10 +3,17 @@
 if ($_REQUEST['idLibro']) {
     $id = $_REQUEST['idLibro'];
     $sql = "SELECT l.*, i.nombre, i.path, c.nombre as categoiaN, f.nombre as formatoN FROM libros l INNER JOIN imagenes i INNER JOIN categorias c inner join  formatos f ON l.id_imagen = i.id_imagen and c.id_categoria=l.id_categoria and f.id_formato=l.id_formato where id_libro = $id";
-
     $libros = prepare_select($conexion, $sql);
     if ($libros->num_rows > 0) {
         $libro = $libros->fetch_assoc();
+    }
+    if (!empty($_SESSION['User'])) {
+        $sqlEstadoCarrito = "SELECT count(estado) from carrito where Id_Usuario = ? and estado= ?";
+        $idUsuarioCarrito = $_SESSION['User']['Id_Usuario'];
+        $estadoReservado1 = prepare_select($conexion, $sqlEstadoCarrito, [$idUsuarioCarrito, 1]);
+        $estadoReservado2 = prepare_select($conexion, $sqlEstadoCarrito, [$idUsuarioCarrito, 2]);
+        $estadoReservado1 = $estadoReservado1->fetch_assoc();
+        $estadoReservado2 = $estadoReservado2->fetch_assoc();
     }
 }
 ?>
@@ -26,7 +33,13 @@ if ($_REQUEST['idLibro']) {
             <p><?= $libro['descripcion'] ?></p>
             <div class="positon__up">
                 <?php if (!empty($_SESSION['User'])) : ?>
-                    <button class="btn_l btn__celeste" id="boton" data-id="<?= $libro['id_libro'] ?>">Agregar al Carrito</button>
+                    <?php if ($estadoReservado1['count(estado)'] > 0) : ?>
+                        <button class="btn_l btn__celeste" id="boton" data-id="1">Agregar al Carrito</button>
+                    <?php elseif ($estadoReservado2['count(estado)'] > 0) : ?>
+                        <button class="btn_l btn__celeste" id="boton" data-id="2">Agregar al Carrito</button>
+                    <?php else : ?>
+                        <button class="btn_l btn__celeste" id="boton" data-id="<?= $libro['id_libro'] ?>">Agregar al Carrito</button>
+                    <?php endif ?>
                 <?php else : ?>
                     <button class="btn_l btn__celeste" id="boton">Agregar al Carrito</button>
                 <?php endif ?>

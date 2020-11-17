@@ -16,6 +16,18 @@
                 text: 'Para realizar reservas nesesitas Iniciar Sesion',
                 footer: "<a href='http://localhost/biblioteca2/acceso/login.php' class='click'>Click aqui y vamos Iniciar Sesion</a>"
             })
+        } else if (idLibro == 1) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Todavia no as retirado una reserva qe hisite',
+            })
+        } else if (idLibro == 2) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Tienes tienes una devolucion pendiente',
+            })
         } else {
             const xmlhttp = new XMLHttpRequest();
             xmlhttp.open('POST', '/biblioteca2/usuarios/ajax/agregarCarrito.php');
@@ -44,7 +56,7 @@
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xmlhttp.send(`idLibro=${idLibro}`);
         }
-        console.log(idLibro)
+  
 
     }
 })();
